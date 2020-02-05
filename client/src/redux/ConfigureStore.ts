@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { isProd } from '../config';
 
 import thunk from 'redux-thunk';
@@ -13,12 +14,9 @@ export const ConfigureStore = () => {
         middleware = [...middleware, thunk, logger];
     }
 
-    const composeEnhancers =
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || null;
-
     const store = createStore(
         combineReducers({}),
-        composeEnhancers(applyMiddleware(...middleware)),
+        composeWithDevTools(applyMiddleware(...middleware)),
     );
 
     return store;

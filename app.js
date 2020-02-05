@@ -35,10 +35,6 @@ else
 if (!process.env.PROD)
     app.use(logger('dev'));
 
-app.use(passport.initialize()) // Inits passport
-passport.createLocalStrategy() // Creates a local strategy
-passport.createJwtStrategy() // Creates a JWT Strategy
-
 app.use(express.json({ limit: '12mb' }))
 app.use(express.urlencoded({ limit: '12mb', extended: true }))
 
