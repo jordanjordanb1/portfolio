@@ -4,9 +4,10 @@ import { isProd } from '../config';
 
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { Middleware } from 'redux';
 
 export const ConfigureStore = () => {
-    let middleware: any[] = [];
+    let middleware: Middleware[] = [];
 
     if (isProd()) {
         middleware = [...middleware, thunk];
