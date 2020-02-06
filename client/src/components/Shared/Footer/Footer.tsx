@@ -6,7 +6,7 @@ import './Footer.scss';
 
 export default function Footer() {
     return (
-        <Container fluid className="mt-2 footer">
+        <Container fluid className="footer">
             <Row>
                 <Col xs="12">Footer</Col>
             </Row>
