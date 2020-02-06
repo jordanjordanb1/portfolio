@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 export default function Navbar() {
     return (
-        <NavbarBootstrap bg="light" expand="lg" className="mb-2">
+        <NavbarBootstrap variant="dark" expand="lg">
             <Container fluid>
                 <NavbarBootstrap.Brand href="/">
                     Jordan Barbosa
