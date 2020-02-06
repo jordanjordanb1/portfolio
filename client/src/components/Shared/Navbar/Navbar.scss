@@ -9,5 +9,16 @@
     .navbar-brand a,
     a {
         color: var(--almond) !important;
+
+        &:hover {
+            color: var(--tuscany) !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .social-links a {
+        margin: 0px 10px;
+        font-size: 2em;
     }
 }
