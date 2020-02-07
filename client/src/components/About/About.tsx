@@ -36,12 +36,11 @@ export default function About() {
                                     frameworks and libraries, I started to move
                                     into the Angular side, but quickly changed
                                     to React. I now focus on Reactjs (and Redux
-                                    for state managment) with a little
-                                    TypeScript. With the backmend I focus on
-                                    NodeJS to keep everything JavaScript (I love
-                                    it now! ¯\_(ツ)_/¯) I love to problems
-                                    solve, and to find better ways to do current
-                                    things.
+                                    for state managment) with TypeScript. With
+                                    the backend I focus on NodeJS to keep
+                                    everything JavaScript (I love it now
+                                    ¯\_(ツ)_/¯) I love to problem solve, and to
+                                    find better ways to do current things.
                                 </p>
                             </Col>
                         </Row>
