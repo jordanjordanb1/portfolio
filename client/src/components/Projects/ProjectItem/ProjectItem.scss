@@ -1,0 +1,48 @@
+.project-item {
+    position: relative;
+    min-width: 350px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    animation: slide-down 750ms forwards ease-out;
+
+    img {
+        transform: scale(1);
+        transition: all 0.25s ease-out;
+    }
+
+    &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        transition: all 0.25s ease-out;
+        z-index: 999;
+
+        &-circle {
+            border-radius: 100%;
+            width: 75px;
+            height: 75px;
+            background: var(--aqua);
+            font-family: 'Acme', sans-serif;
+            opacity: 0;
+            transition: opacity 0.25s ease-out;
+        }
+
+        &:hover,
+        &:focus {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        &:hover &-circle,
+        &:focus &-circle {
+            opacity: 1;
+        }
+    }
+
+    &:hover img,
+    &:focus img {
+        transform: scale(1.2);
+    }
+}
