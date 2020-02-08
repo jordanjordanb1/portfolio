@@ -19,7 +19,8 @@ body {
 .jumbotron {
     margin: 0;
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow: hidden;
     background: var(--eerie-black);
 }
