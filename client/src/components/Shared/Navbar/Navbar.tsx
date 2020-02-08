@@ -26,7 +26,7 @@ export default function Navbar() {
                             </NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            <NavLink className="nav-link" to="/Projects">
+                            <NavLink className="nav-link" to="/projects">
                                 Projects
                             </NavLink>
                         </Nav.Item>
