@@ -5,6 +5,9 @@ import Navbar from './Shared/Navbar/Navbar';
 
 const About = React.lazy(() => import('../components/About/About'));
 const Projects = React.lazy(() => import('../components/Projects/Projects'));
+const SelectedProject = React.lazy(() =>
+    import('../components/SelectedProject/SelectedProject'),
+);
 const Contact = React.lazy(() => import('../components/Contact/Contact'));
 
 export default function Routing() {
@@ -15,7 +18,8 @@ export default function Routing() {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
-                    <Route path="/projects" component={Projects} />
+                    <Route path="/projects" exact component={Projects} />
+                    <Route path="/projects/:id" component={SelectedProject} />
                     <Route path="/contact" component={Contact} />
                 </Switch>
             </Suspense>
