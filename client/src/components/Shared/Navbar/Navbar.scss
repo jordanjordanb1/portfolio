@@ -1,5 +1,5 @@
 .navbar {
-    background: var(--eerie-black);
+    background: transparent;
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +17,10 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        background: var(--eerie-black);
+    }
+
     .social-links a {
         margin: 0px 10px;
         font-size: 2em;
