@@ -82,14 +82,18 @@ export default function SelectedProject() {
 
                         <Row className="mb-3">
                             <Col xs="12">
-                                <Alert variant="warning">
-                                    <i className="fas fa-info-circle"></i>{' '}
-                                    <span className="font-weight-bold">
-                                        NOTE
-                                    </span>
-                                    : This is a heroku app, it may take long to
-                                    load!
-                                </Alert>
+                                {isHeroku ? (
+                                    <Alert variant="warning">
+                                        <i className="fas fa-info-circle"></i>{' '}
+                                        <span className="font-weight-bold">
+                                            NOTE
+                                        </span>
+                                        : This is a heroku app, it may take long
+                                        to load!
+                                    </Alert>
+                                ) : (
+                                    ''
+                                )}
 
                                 <ButtonGroup className="selected-actions">
                                     <Button href={github}>
