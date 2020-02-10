@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <Jumbotron
             fluid
-            className="home-jumbotron d-flex justify-content-center align-items-center"
+            className="home-jumbotron d-flex justify-content-center align-items-center page"
         >
             <div className="item-container">
                 <div className="hi-box text-left">

@@ -8,7 +8,7 @@ import ContactForm from './ContactForm';
 
 export default function Contact() {
     return (
-        <Jumbotron fluid>
+        <Jumbotron fluid className="page">
             <Container fluid>
                 <Row>
                     <Col

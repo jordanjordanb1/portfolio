@@ -1,0 +1,27 @@
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.slide-left-appear,
+.slide-left-enter {
+    transform: translateX(101vw); // +1 is required so there's no overlapping
+    z-index: 1;
+}
+
+.slide-left-appear-active,
+.slide-left-enter-active {
+    transform: translateX(0px);
+    transition: all 3000ms ease-out;
+}
+
+.slide-left-exit {
+    transform: translateX(0px);
+}
+
+.slide-left-exit.fade-exit-active {
+    transform: translateX(-101vw); // +1 is required so there's no overlapping
+    transition: all 3000ms ease-out;
+}

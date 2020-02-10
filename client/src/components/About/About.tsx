@@ -7,7 +7,10 @@ import Col from 'react-bootstrap/Col';
 
 export default function About() {
     return (
-        <Jumbotron fluid className="d-flex align-items-center mt-5 mt-sm-0">
+        <Jumbotron
+            fluid
+            className="d-flex align-items-center mt-5 mt-sm-0 page"
+        >
             <Container fluid>
                 <Row>
                     <Col xs="12" md="9" lg="7" className="about-container">

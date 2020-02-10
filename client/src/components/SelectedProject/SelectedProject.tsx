@@ -18,7 +18,7 @@ export default function SelectedProject() {
     return (
         <Jumbotron
             fluid
-            className=" d-flex justify-content-center align-items-center"
+            className="page d-flex justify-content-center align-items-center"
         >
             <Container className="mt-4 selected">
                 <Row>

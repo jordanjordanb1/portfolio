@@ -9,7 +9,7 @@ import ProjectItem from './ProjectItem/ProjectItem';
 
 export default function Projects() {
     return (
-        <Jumbotron fluid>
+        <Jumbotron fluid className="page">
             <Container fluid>
                 <Row>
                     <Col
