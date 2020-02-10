@@ -16,22 +16,39 @@ export default function Navbar() {
                 <NavbarBootstrap.Collapse id="responsive-navbar-nav">
                     <Nav>
                         <Nav.Item>
-                            <NavLink exact className="nav-link" to="/">
+                            <NavLink
+                                exact
+                                className="nav-link"
+                                to="/"
+                                activeClassName="active"
+                            >
                                 Home
                             </NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            <NavLink className="nav-link" to="/about">
+                            <NavLink
+                                className="nav-link"
+                                to="/about"
+                                activeClassName="active"
+                            >
                                 About
                             </NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            <NavLink className="nav-link" to="/projects">
+                            <NavLink
+                                className="nav-link"
+                                to="/projects"
+                                activeClassName="active"
+                            >
                                 Projects
                             </NavLink>
                         </Nav.Item>
                         <Nav.Item>
-                            <NavLink className="nav-link" to="/contact">
+                            <NavLink
+                                className="nav-link"
+                                to="/contact"
+                                activeClassName="active"
+                            >
                                 Contact
                             </NavLink>
                         </Nav.Item>
