@@ -11,7 +11,8 @@
 
         .hi-box {
             display: block;
-            animation: slide-down 0.75s forwards ease-out;
+            transform: translateY(-1000px);
+            animation: slide-down 0.75s forwards ease-out 300ms;
 
             h1 {
                 display: block;
@@ -29,12 +30,12 @@
 
                 &:nth-child(1) {
                     animation: slide-right 0.75s forwards ease-out;
-                    animation-delay: 0.75s;
+                    animation-delay: 1.05s;
                 }
 
                 &:nth-child(2) {
                     animation: slide-up 0.75s forwards ease-out;
-                    animation-delay: 1.5s;
+                    animation-delay: 1.8s;
                 }
             }
         }
