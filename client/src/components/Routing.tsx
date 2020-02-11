@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Navbar from './Shared/Navbar/Navbar';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Routing.scss';
@@ -17,7 +17,7 @@ export default function Routing() {
                 render={({ location }) => (
                     <TransitionGroup component={null}>
                         <CSSTransition
-                            key={location.key}
+                            key={location.pathname}
                             timeout={300}
                             classNames="slide-left"
                             mountOnEnter
