@@ -18,7 +18,7 @@ export default function Routing() {
                     <TransitionGroup component={null}>
                         <CSSTransition
                             key={location.key}
-                            timeout={3000}
+                            timeout={300}
                             classNames="slide-left"
                             mountOnEnter
                             unmountOnExit
