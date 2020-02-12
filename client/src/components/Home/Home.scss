@@ -38,6 +38,25 @@
                     animation-delay: 1.8s;
                 }
             }
+
+            .quick-links {
+                background: none;
+                border: 1px solid var(--almond);
+                width: 150px;
+                opacity: 0;
+                font-weight: 400;
+                outline: none;
+                pointer-events: none;
+                border-radius: 0px;
+                animation: show 0.75s forwards ease-out;
+                animation-delay: 2.55s;
+
+                &:hover {
+                    background: var(--almond);
+                    color: var(--eerie-black);
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -67,8 +86,17 @@
             text-align: center;
         }
 
-        .intro-box h1 {
-            line-height: 80px;
+        .intro-box {
+            text-align: center !important;
+
+            h1 {
+                line-height: 80px;
+            }
+
+            .quick-links {
+                width: 100px;
+                font-size: 0.8em;
+            }
         }
     }
 }
