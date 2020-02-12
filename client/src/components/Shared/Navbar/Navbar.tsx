@@ -1,106 +1,114 @@
 import React from 'react';
 import './Navbar.scss';
 import { default as NavbarBootstrap } from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Navbar() {
     return (
-        <NavbarBootstrap variant="dark" expand="md">
-            <Container fluid>
-                <NavbarBootstrap.Brand className="mr-md-5">
-                    <Link
-                        to={{
-                            pathname: '/',
-                            state: {
-                                animation: 'slide-down',
-                            },
-                        }}
-                    >
-                        Jordan Barbosa
-                    </Link>
-                </NavbarBootstrap.Brand>
-                <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
-                <NavbarBootstrap.Collapse id="responsive-navbar-nav">
-                    <Nav>
-                        <Nav.Item>
-                            <NavLink
-                                exact
-                                className="nav-link"
-                                to={{
-                                    pathname: '/',
-                                    state: {
-                                        animation: 'slide-down',
-                                    },
-                                }}
-                                activeClassName="active"
-                            >
-                                Home
-                            </NavLink>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <NavLink
-                                className="nav-link"
-                                to={{
-                                    pathname: '/about',
-                                    state: {
-                                        animation: 'slide-up',
-                                    },
-                                }}
-                                activeClassName="active"
-                            >
-                                About
-                            </NavLink>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <NavLink
-                                className="nav-link"
-                                to={{
-                                    pathname: '/projects',
-                                    state: {
-                                        animation: 'slide-up',
-                                    },
-                                }}
-                                activeClassName="active"
-                            >
-                                Projects
-                            </NavLink>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <NavLink
-                                className="nav-link"
-                                to={{
-                                    pathname: '/contact',
-                                    state: {
-                                        animation: 'slide-up',
-                                    },
-                                }}
-                                activeClassName="active"
-                            >
-                                Contact
-                            </NavLink>
-                        </Nav.Item>
-                    </Nav>
-
-                    <Nav className="ml-auto social-links d-flex flex-row justify-content-center">
-                        <Nav.Link target="_blank" href="https://github.com/jordanjordanb1/">
-                            <i className="fab fa-github"></i>
-                        </Nav.Link>
-
+        <NavbarBootstrap collapseOnSelect fixed="top" variant="dark" expand="md">
+            <NavbarBootstrap.Brand
+                as={Link}
+                href="/"
+                to={{
+                    pathname: '/',
+                    state: {
+                        animation: 'slide-down',
+                    },
+                }}
+                className="mr-md-5"
+            >
+                Jordan Barbosa
+            </NavbarBootstrap.Brand>
+            <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
+            <NavbarBootstrap.Collapse id="responsive-navbar-nav">
+                <Nav fill>
+                    <Nav.Item>
                         <Nav.Link
-                            target="_blank"
-                            href="https://www.linkedin.com/in/jordan-barbosa/"
+                            as={NavLink}
+                            // @ts-ignore
+                            exact
+                            href="/"
+                            className="nav-link"
+                            to={{
+                                pathname: '/',
+                                state: {
+                                    animation: 'slide-down',
+                                },
+                            }}
+                            activeClassName="active"
                         >
-                            <i className="fab fa-linkedin"></i>
+                            Home
                         </Nav.Link>
+                    </Nav.Item>
 
-                        <Nav.Link href="mailto: jordansbarbosa01@gmail.com?subject=Contact from your website">
-                            <i className="far fa-envelope"></i>
+                    <Nav.Item>
+                        <Nav.Link
+                            as={NavLink}
+                            href="/about"
+                            className="nav-link"
+                            to={{
+                                pathname: '/about',
+                                state: {
+                                    animation: 'slide-up',
+                                },
+                            }}
+                            // @ts-ignore
+                            activeClassName="active"
+                        >
+                            About
                         </Nav.Link>
-                    </Nav>
-                </NavbarBootstrap.Collapse>
-            </Container>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link
+                            as={NavLink}
+                            href="/projects"
+                            className="nav-link"
+                            to={{
+                                pathname: '/projects',
+                                state: {
+                                    animation: 'slide-up',
+                                },
+                            }}
+                            // @ts-ignore
+                            activeClassName="active"
+                        >
+                            Projects
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link
+                            as={NavLink}
+                            href="/contact"
+                            className="nav-link"
+                            to={{
+                                pathname: '/contact',
+                                state: {
+                                    animation: 'slide-up',
+                                },
+                            }}
+                            // @ts-ignore
+                            activeClassName="active"
+                        >
+                            Contact
+                        </Nav.Link>
+                    </Nav.Item>
+                </Nav>
+
+                <Nav className="ml-auto social-links d-flex flex-row justify-content-center">
+                    <Nav.Link target="_blank" href="https://github.com/jordanjordanb1/">
+                        <i className="fab fa-github"></i>
+                    </Nav.Link>
+
+                    <Nav.Link target="_blank" href="https://www.linkedin.com/in/jordan-barbosa/">
+                        <i className="fab fa-linkedin"></i>
+                    </Nav.Link>
+
+                    <Nav.Link href="mailto: jordansbarbosa01@gmail.com?subject=Contact from your website">
+                        <i className="far fa-envelope"></i>
+                    </Nav.Link>
+                </Nav>
+            </NavbarBootstrap.Collapse>
         </NavbarBootstrap>
     );
 }
