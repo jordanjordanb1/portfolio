@@ -6,7 +6,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 export default function Navbar() {
     return (
-        <NavbarBootstrap collapseOnSelect fixed="top" variant="dark" expand="md">
+        <NavbarBootstrap collapseOnSelect fixed="top" variant="dark" expand="md" className="p-0">
             <NavbarBootstrap.Brand
                 as={Link}
                 href="/"
@@ -16,11 +16,13 @@ export default function Navbar() {
                         animation: 'slide-down',
                     },
                 }}
-                className="mr-md-5"
+                className="mr-md-5 mr-0"
             >
-                Jordan Barbosa
+                <span className="p-3">Jordan Barbosa</span>
             </NavbarBootstrap.Brand>
-            <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
+            <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" className="p-2">
+                MENU <i className="fas fa-bars"></i>
+            </NavbarBootstrap.Toggle>
             <NavbarBootstrap.Collapse id="responsive-navbar-nav">
                 <Nav fill>
                     <Nav.Item>
@@ -38,7 +40,7 @@ export default function Navbar() {
                             }}
                             activeClassName="active"
                         >
-                            Home
+                            HOME
                         </Nav.Link>
                     </Nav.Item>
 
@@ -56,7 +58,7 @@ export default function Navbar() {
                             // @ts-ignore
                             activeClassName="active"
                         >
-                            About
+                            ABOUT
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -73,7 +75,7 @@ export default function Navbar() {
                             // @ts-ignore
                             activeClassName="active"
                         >
-                            Projects
+                            PROJECTS
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -90,12 +92,12 @@ export default function Navbar() {
                             // @ts-ignore
                             activeClassName="active"
                         >
-                            Contact
+                            CONTACT
                         </Nav.Link>
                     </Nav.Item>
                 </Nav>
 
-                <Nav className="ml-auto social-links d-flex flex-row justify-content-center">
+                <Nav className="ml-auto social-links d-flex flex-row justify-content-center pr-2">
                     <Nav.Link target="_blank" href="https://github.com/jordanjordanb1/">
                         <i className="fab fa-github"></i>
                     </Nav.Link>

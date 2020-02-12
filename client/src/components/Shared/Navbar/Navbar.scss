@@ -1,22 +1,27 @@
-.active {
-    text-decoration: underline;
-}
-
 .navbar {
     background: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 999999999999999;
 
-    .navbar-brand a,
-    a {
+    .navbar-brand,
+    .nav-item,
+    .nav-link {
         color: var(--almond) !important;
+        transition: all 200ms ease-out;
 
         &:hover {
             color: var(--tuscany) !important;
         }
+    }
+
+    .nav-item .active {
+        background: var(--almond);
+        color: var(--eerie-black) !important;
+    }
+
+    .navbar-toggler {
+        margin: 10px 10px 10px 0;
+        font-size: 1em;
+        color: var(--almond) !important;
     }
 }
 
@@ -28,5 +33,21 @@
     .social-links a {
         margin: 0px 10px;
         font-size: 2em;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid var(--almond);
+        background: #0e0e0e;
+        padding-top: 10px;
+
+        .nav-item .active,
+        .nav-link {
+            background: initial !important;
+            color: var(--almond) !important;
+        }
+
+        .active {
+            font-weight: bold;
+        }
     }
 }
