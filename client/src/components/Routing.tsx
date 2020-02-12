@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './Shared/Navbar/Navbar';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -15,11 +15,19 @@ export default function Routing() {
             <Navbar />
             <Route
                 render={({ location }) => (
-                    <TransitionGroup component={null}>
+                    <TransitionGroup
+                        component={null}
+                        childFactory={(child): ReactElement<any> =>
+                            React.cloneElement(child, {
+                                classNames: location.state
+                                    ? (location.state as any).animation
+                                    : 'slide-down',
+                            })
+                        }
+                    >
                         <CSSTransition
                             key={location.pathname}
-                            timeout={300}
-                            classNames="slide-down"
+                            timeout={750}
                             mountOnEnter
                             unmountOnExit
                         >

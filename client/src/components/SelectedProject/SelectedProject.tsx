@@ -9,17 +9,19 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useLocation } from 'react-router';
+import Project from '../../interfaces/ProjectInterface';
+
+interface State {
+    project: Project;
+}
 
 export default function SelectedProject() {
     const location = useLocation(),
         { id, name, desc, url, github, technology, isHeroku }: any =
-            location.state || '';
+            (location.state as State).project || '';
 
     return (
-        <Jumbotron
-            fluid
-            className="page d-flex justify-content-center align-items-center"
-        >
+        <Jumbotron fluid className="page d-flex justify-content-center align-items-center">
             <Container className="mt-4 selected">
                 <Row>
                     <Col
@@ -63,10 +65,7 @@ export default function SelectedProject() {
                                 <h6>Technologies used:</h6>
                                 <div className="d-flex flex-wrap justify-content-between">
                                     {technology.map((item: string) => (
-                                        <span
-                                            key={item}
-                                            className="mr-2 mb-2 selected-tech-item"
-                                        >
+                                        <span key={item} className="mr-2 mb-2 selected-tech-item">
                                             {item}
                                         </span>
                                     ))}
@@ -85,11 +84,8 @@ export default function SelectedProject() {
                                 {isHeroku ? (
                                     <Alert variant="warning">
                                         <i className="fas fa-info-circle"></i>{' '}
-                                        <span className="font-weight-bold">
-                                            NOTE
-                                        </span>
-                                        : This is a heroku app, it may take long
-                                        to load!
+                                        <span className="font-weight-bold">NOTE</span>: This is a
+                                        heroku app, it may take long to load!
                                     </Alert>
                                 ) : (
                                     ''
@@ -97,8 +93,7 @@ export default function SelectedProject() {
 
                                 <ButtonGroup className="selected-actions">
                                     <Button href={github}>
-                                        <i className="fab fa-github mr-1"></i>{' '}
-                                        Code
+                                        <i className="fab fa-github mr-1"></i> Code
                                     </Button>
                                     <Button href={url}>
                                         <i className="fas fa-external-link-alt mr-2"></i>

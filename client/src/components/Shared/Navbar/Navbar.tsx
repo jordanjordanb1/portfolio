@@ -10,7 +10,16 @@ export default function Navbar() {
         <NavbarBootstrap variant="dark" expand="md">
             <Container fluid>
                 <NavbarBootstrap.Brand className="mr-md-5">
-                    <Link to="/">Jordan Barbosa</Link>
+                    <Link
+                        to={{
+                            pathname: '/',
+                            state: {
+                                animation: 'slide-down',
+                            },
+                        }}
+                    >
+                        Jordan Barbosa
+                    </Link>
                 </NavbarBootstrap.Brand>
                 <NavbarBootstrap.Toggle aria-controls="responsive-navbar-nav" />
                 <NavbarBootstrap.Collapse id="responsive-navbar-nav">
@@ -19,7 +28,12 @@ export default function Navbar() {
                             <NavLink
                                 exact
                                 className="nav-link"
-                                to="/"
+                                to={{
+                                    pathname: '/',
+                                    state: {
+                                        animation: 'slide-down',
+                                    },
+                                }}
                                 activeClassName="active"
                             >
                                 Home
@@ -28,7 +42,12 @@ export default function Navbar() {
                         <Nav.Item>
                             <NavLink
                                 className="nav-link"
-                                to="/about"
+                                to={{
+                                    pathname: '/about',
+                                    state: {
+                                        animation: 'slide-up',
+                                    },
+                                }}
                                 activeClassName="active"
                             >
                                 About
@@ -37,7 +56,12 @@ export default function Navbar() {
                         <Nav.Item>
                             <NavLink
                                 className="nav-link"
-                                to="/projects"
+                                to={{
+                                    pathname: '/projects',
+                                    state: {
+                                        animation: 'slide-up',
+                                    },
+                                }}
                                 activeClassName="active"
                             >
                                 Projects
@@ -46,7 +70,12 @@ export default function Navbar() {
                         <Nav.Item>
                             <NavLink
                                 className="nav-link"
-                                to="/contact"
+                                to={{
+                                    pathname: '/contact',
+                                    state: {
+                                        animation: 'slide-up',
+                                    },
+                                }}
                                 activeClassName="active"
                             >
                                 Contact
@@ -55,10 +84,7 @@ export default function Navbar() {
                     </Nav>
 
                     <Nav className="ml-auto social-links d-flex flex-row justify-content-center">
-                        <Nav.Link
-                            target="_blank"
-                            href="https://github.com/jordanjordanb1/"
-                        >
+                        <Nav.Link target="_blank" href="https://github.com/jordanjordanb1/">
                             <i className="fab fa-github"></i>
                         </Nav.Link>
 

@@ -14,7 +14,10 @@ export default function ProjectItem({ project }: Props) {
         <Link
             to={{
                 pathname: `/projects/${project.id}`,
-                state: project,
+                state: {
+                    project,
+                    animation: 'slide-right'
+                },
             }}
             className="project-item"
         >
