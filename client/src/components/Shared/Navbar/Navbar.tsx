@@ -2,7 +2,9 @@ import React from 'react';
 import './Navbar.scss';
 import { default as NavbarBootstrap } from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 import { NavLink, Link } from 'react-router-dom';
+import { config } from '../../../config';
 
 export default function Navbar() {
     return (
@@ -99,15 +101,19 @@ export default function Navbar() {
 
                 <Nav className="ml-auto social-links d-flex flex-row justify-content-center pr-2">
                     <Nav.Link target="_blank" href="https://github.com/jordanjordanb1/">
-                        <i className="fab fa-github"></i>
+                        <i className="fab fa-github mt-2"></i>
                     </Nav.Link>
 
                     <Nav.Link target="_blank" href="https://www.linkedin.com/in/jordan-barbosa/">
-                        <i className="fab fa-linkedin"></i>
+                        <i className="fab fa-linkedin mt-2"></i>
                     </Nav.Link>
 
                     <Nav.Link href="mailto: jordansbarbosa01@gmail.com?subject=Contact from your website">
-                        <i className="far fa-envelope"></i>
+                        <i className="far fa-envelope mt-2"></i>
+                    </Nav.Link>
+
+                    <Nav.Link target="_blank" href={`${config.url}/resume/resume.pdf`}>
+                        <Button className="p-1 px-2 resume-button">RESUME</Button>
                     </Nav.Link>
                 </Nav>
             </NavbarBootstrap.Collapse>

@@ -25,6 +25,23 @@
         background: var(--almond);
         outline: none;
     }
+
+    .resume-button {
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        border: 1px solid var(--almond);
+        color: var(--almond);
+        transition: all 300ms;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--almond) !important;
+            color: var(--eerie-black) !important;
+            border-color: var(--almond) !important;
+        }
+    }
 }
 
 @media (max-width: 768px) {
