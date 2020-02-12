@@ -5,11 +5,20 @@
     right: 0;
 }
 
+// RESET CLASS
+
+.slide-up-enter-done,
+.slide-down-enter-done,
+.slide-right-enter-done,
+.slide-left-enter-done {
+    position: relative;
+}
+
 // SLIDE DOWN
 
 .slide-down-appear,
 .slide-down-enter {
-    transform: translateY(-150vh); // +1 is required so there's no overlapping
+    transform: translateY(-150vh);
     z-index: 1;
 }
 
@@ -24,7 +33,7 @@
 }
 
 .slide-down-exit.slide-down-exit-active {
-    transform: translateY(150vh); // +1 is required so there's no overlapping
+    transform: translateY(150vh);
     transition: all 750ms ease-out;
 }
 
@@ -32,7 +41,7 @@
 
 .slide-up-appear,
 .slide-up-enter {
-    transform: translateY(150vh); // +1 is required so there's no overlapping
+    transform: translateY(150vh);
     z-index: 1;
 }
 
@@ -47,7 +56,7 @@
 }
 
 .slide-up-exit.slide-up-exit-active {
-    transform: translateY(-150vh); // +1 is required so there's no overlapping
+    transform: translateY(-150vh);
     transition: all 750ms ease-out;
 }
 
@@ -55,7 +64,7 @@
 
 .slide-left-appear,
 .slide-left-enter {
-    transform: translateX(-150vw); // +1 is required so there's no overlapping
+    transform: translateX(-150vw);
     z-index: 1;
 }
 
@@ -70,7 +79,7 @@
 }
 
 .slide-left-exit.slide-left-exit-active {
-    transform: translateX(150vw); // +1 is required so there's no overlapping
+    transform: translateX(150vw);
     transition: all 750ms ease-out;
 }
 
@@ -78,7 +87,7 @@
 
 .slide-right-appear,
 .slide-right-enter {
-    transform: translateX(150vw); // +1 is required so there's no overlapping
+    transform: translateX(150vw);
     z-index: 1;
 }
 
@@ -93,6 +102,6 @@
 }
 
 .slide-right-exit.slide-right-exit-active {
-    transform: translateX(-150vw); // +1 is required so there's no overlapping
+    transform: translateX(-150vw);
     transition: all 750ms ease-out;
 }
