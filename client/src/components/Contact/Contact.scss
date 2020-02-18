@@ -55,6 +55,16 @@
             background: black !important;
             box-shadow: none;
         }
+
+        &:disabled {
+            background: var(--eerie-black);
+            cursor: not-allowed;
+            border: none;
+
+            &:hover {
+                color: white;
+            }
+        }
     }
 }
 

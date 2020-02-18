@@ -8,13 +8,26 @@ import Button from 'react-bootstrap/Button';
 import FormGroup from 'react-bootstrap/FormGroup';
 import Label from 'react-bootstrap/FormLabel';
 import Alert from 'react-bootstrap/Alert';
+import axios from 'axios';
 
 export default function ContactForm() {
     const [formStatus, setFormStatus] = useState(),
-        [formMsg, setFormMsg] = useState();
+        [formMsg, setFormMsg] = useState('');
 
     const ContactSchema = Yup.object().shape({
-        contact: Yup.object().shape({}),
+        contact: Yup.object().shape({
+            name: Yup.string()
+                .min(3, 'Name is not valid')
+                .max(25, 'Name is not valid')
+                .required('Name is required'),
+            email: Yup.string()
+                .email('Email is not valid')
+                .required('Email is required'),
+            message: Yup.string()
+                .min(3, 'Message is not valid')
+                .max(250, 'Message is too long')
+                .required('Message is required'),
+        }),
     });
 
     return (
@@ -27,7 +40,24 @@ export default function ContactForm() {
                 },
             }}
             validationSchema={ContactSchema}
-            onSubmit={() => {}}
+            onSubmit={async ({ contact }, { setSubmitting }) => {
+                setSubmitting(true);
+
+                await axios.post('/api/contact', contact).then(({ data }) => {
+                    if (data.success) {
+                        // @ts-ignore
+                        setFormStatus(true);
+                        setFormMsg('Message sent successfully');
+                        return true;
+                    }
+
+                    // @ts-ignore
+                    setFormStatus(false);
+                    setFormMsg('An unknown error occured');
+                });
+
+                setSubmitting(false);
+            }}
         >
             {({ isSubmitting, resetForm }) => (
                 <Form>
@@ -39,9 +69,7 @@ export default function ContactForm() {
                                         {formMsg}
                                     </Alert>
                                 ) : (
-                                    <Alert className="mb-2 form-error text-center">
-                                        {formMsg}
-                                    </Alert>
+                                    <Alert className="mb-2 form-error text-center">{formMsg}</Alert>
                                 )
                             ) : null}
 
@@ -113,11 +141,8 @@ export default function ContactForm() {
 
                             <FormGroup>
                                 <ButtonGroup className="login-buttons home-buttons">
-                                    <Button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                    >
-                                        SEND
+                                    <Button type="submit" disabled={isSubmitting}>
+                                        {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
                                     </Button>
                                     <Button
                                         disabled={isSubmitting}
