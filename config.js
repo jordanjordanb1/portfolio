@@ -5,6 +5,6 @@ const mongodb_user = process.env.MONGOUSER || '',
 
 module.exports = {
     mongoUrl: 'mongodb://localhost:27017/portfolio',
-    mongoProdUrl: `https://google.com`, // Fill out later
+    mongoProdUrl: `mongodb://${mongodb_user}:${mongodb_pass}@ds061757.mlab.com:61757/heroku_8f2wlb6c`,
     secret
 }
