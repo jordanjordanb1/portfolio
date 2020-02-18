@@ -6,7 +6,8 @@ const express = require('express'),
     helmet = require('helmet'),
     __CONFIG__ = require('./config');
 
-const indexRouter = require('./routes/index')
+const indexRouter = require('./routes/index'),
+    apiRouter = require('./routes/api')
 
 const app = express();
 
@@ -27,9 +28,9 @@ app.use(helmet())
 
 // CORS setup
 if (process.env.PROD)
-    app.use(cors({ origin: 'FILL OUT LATER', credentials: true }))
+    app.use(cors())
 else
-    app.use(cors({ origin: '*', credentials: true }));
+    app.use(cors());
 
 // Enables logger in development mode
 if (!process.env.PROD)
@@ -43,5 +44,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* Routes  */
 app.use('/', indexRouter);
+app.use('/api', apiRouter)
 
 module.exports = app;
