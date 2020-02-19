@@ -24,12 +24,14 @@
         border-radius: 0px;
         opacity: 0.8;
         transition: 0.3s ease-out;
+        color: var(--almond);
 
         &:focus {
             background: var(--eerie-black);
             opacity: 1;
             box-shadow: none;
             outline: none;
+            color: var(--almond);
         }
     }
 
