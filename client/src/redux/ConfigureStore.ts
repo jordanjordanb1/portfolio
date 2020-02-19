@@ -5,6 +5,7 @@ import { isProd } from '../config';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { Middleware } from 'redux';
+import projects from './reducers/projects';
 
 export const ConfigureStore = () => {
     let middleware: Middleware[] = [];
@@ -16,7 +17,7 @@ export const ConfigureStore = () => {
     }
 
     const store = createStore(
-        combineReducers({}),
+        combineReducers({ projects }),
         composeWithDevTools(applyMiddleware(...middleware)),
     );
 

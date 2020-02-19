@@ -1,5 +1,5 @@
 export default interface Project {
-    id: number;
+    _id: number;
     name: string;
     desc: string;
     url: string;
