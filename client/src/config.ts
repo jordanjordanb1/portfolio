@@ -8,7 +8,7 @@ const URL = () => {
     if (isProd()) {
         return ''; // Set in future
     } else {
-        return 'http://localhost:3001';
+        return 'http://192.168.86.26:3001';
     }
 };
 
