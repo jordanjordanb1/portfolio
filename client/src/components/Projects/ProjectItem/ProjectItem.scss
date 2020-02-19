@@ -4,6 +4,9 @@
     height: 250px;
     overflow: hidden;
     cursor: pointer;
+    opacity: 0;
+
+    animation: show 500ms forwards ease-out;
 
     img {
         transform: scale(1);

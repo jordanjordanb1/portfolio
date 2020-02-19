@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Axios from 'axios';
 import { setProjectsLoading, setProjectsList, setProjectsError } from '../../redux/ActionCreators';
 import Project from '../../interfaces/ProjectInterface';
+import Loader from '../Shared/Loader/Loader';
 
 export default function Projects() {
     const { loading } = useSelector(state => (state as any).projects),
@@ -35,11 +36,19 @@ export default function Projects() {
                 return <ProjectItem key={project._id} project={project} />;
             });
         } else if (loading && !list.length && !error) {
-            return 'Loading...';
+            return <Loader />;
         } else if (!loading && !list.length && error) {
             return 'Error...';
+        } else if (!loading && !list.length && !error) {
+            return (
+                <div className="no-projects d-flex justify-content-center align-items-center">
+                    <h1>
+                        NO PROJECTS <i className="far fa-frown"></i>
+                    </h1>
+                </div>
+            );
         } else {
-            return 'No projects';
+            return <Loader />;
         }
     };
 
