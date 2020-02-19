@@ -27,10 +27,7 @@ if (process.env.PROD) {
 app.use(helmet())
 
 // CORS setup
-if (process.env.PROD)
-    app.use(cors())
-else
-    app.use(cors());
+app.use(cors())
 
 // Enables logger in development mode
 if (!process.env.PROD)
