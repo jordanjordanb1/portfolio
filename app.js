@@ -40,7 +40,7 @@ app.use(express.urlencoded({ limit: '12mb', extended: true }))
 app.use(express.static(path.join(__dirname, 'public')));
 
 /* Routes  */
+app.use('/api', apiRouter);
 app.use('/', indexRouter);
-app.use('/api', apiRouter)
 
 module.exports = app;
