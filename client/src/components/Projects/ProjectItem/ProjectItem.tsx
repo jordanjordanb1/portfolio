@@ -3,6 +3,7 @@ import Project from '../../../interfaces/ProjectInterface';
 import Image from 'react-bootstrap/Image';
 import './ProjectItem.scss';
 import { Link } from 'react-router-dom';
+import { config } from '../../../config';
 
 interface Props {
     key: number;
@@ -26,7 +27,8 @@ export default function ProjectItem({ project }: Props) {
                     <span className="mt-1">VIEW</span>
                 </div>
             </div>
-            <Image src="https://picsum.photos/350/250" />
+            {/* { In the future create smaller images 350x250} */}
+            <Image src={`${config.url}/images/projects/${project._id}.png`} />
         </Link>
     );
 }

@@ -22,7 +22,7 @@ export default function Projects() {
 
         Axios.get('/api/projects').then(({ data }) => {
             if (data.success) {
-                setTimeout(() => dispatch(setProjectsList(data.projects)), 1000);
+                dispatch(setProjectsList(data.projects));
             } else if (!data.success) {
                 console.error(data.err);
                 dispatch(setProjectsError());

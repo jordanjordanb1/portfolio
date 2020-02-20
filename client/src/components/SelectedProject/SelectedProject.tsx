@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useLocation } from 'react-router';
 import Project from '../../interfaces/ProjectInterface';
+import { config } from '../../config';
 
 interface State {
     project: Project;
@@ -17,7 +18,7 @@ interface State {
 
 export default function SelectedProject() {
     const location = useLocation(),
-        { id, name, desc, url, github, technology, isHeroku }: any =
+        { _id, name, desc, url, github, technology, isHeroku }: any =
             (location.state as State).project || '';
 
     return (
@@ -30,7 +31,7 @@ export default function SelectedProject() {
                         lg={{ span: 6, offset: 3 }}
                         className="d-flex justify-content-center selected-image"
                     >
-                        <Image fluid src="https://picsum.photos/600/400" />
+                        <Image fluid src={`${config.url}/images/projects/${_id}.png`} />
                     </Col>
                 </Row>
 

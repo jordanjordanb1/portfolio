@@ -6,7 +6,7 @@ export const isProd = () => {
 
 const URL = () => {
     if (isProd()) {
-        return ''; // Set in future
+        return 'https://jordanbarbosa.com'; // Set in future
     } else {
         return 'http://192.168.86.26:3001';
     }
