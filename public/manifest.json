@@ -1,0 +1,9 @@
+{
+    "short_name": "Portfolio",
+    "name": "Jordan Barbosa's Portfolio Website",
+    "icons": [],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#171717",
+    "background_color": "#171717"
+}
