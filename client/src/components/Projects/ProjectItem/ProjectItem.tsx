@@ -28,7 +28,7 @@ export default function ProjectItem({ project }: Props) {
                 </div>
             </div>
             {/* { In the future create smaller images 350x250} */}
-            <Image src={`${config.url}/images/projects/${project._id}.png`} />
+            <Image src={`${config.url}/images/projects/${project._id}-min.png`} />
         </Link>
     );
 }
