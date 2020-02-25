@@ -9,10 +9,12 @@ import FormGroup from 'react-bootstrap/FormGroup';
 import Label from 'react-bootstrap/FormLabel';
 import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 export default function ContactForm() {
     const [formStatus, setFormStatus] = useState(),
-        [formMsg, setFormMsg] = useState('');
+        [formMsg, setFormMsg] = useState(''),
+        history = useHistory();
 
     const ContactSchema = Yup.object().shape({
         contact: Yup.object().shape({
@@ -48,6 +50,9 @@ export default function ContactForm() {
                         // @ts-ignore
                         setFormStatus(true);
                         setFormMsg('Message sent successfully');
+                        setTimeout(() => {
+                            history.push('/');
+                        }, 1000);
                         return true;
                     }
 

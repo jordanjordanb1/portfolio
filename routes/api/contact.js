@@ -1,28 +1,27 @@
 const express = require('express'),
     router = express.Router(),
-    nodemailer = require('nodemailer')
+    nodemailer = require('nodemailer'),
+    config = require('../../config')
 
 
 // NODEMAILER CONFIG (TODO: REPLACE WITH SOMETHING OTHER THAN ETHEREAL)
 const main = async ({ name, email, message }, res) => {
     const transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false,
+        service: 'gmail',
         auth: {
-            user: 'mathew37@ethereal.email',
-            pass: '2X1fsptwMqYG1zV6SS'
+            user: 'jordansbarbosa01@gmail.com',
+            pass: config.gmail_pass
         }
     })
 
+    const formated_message = `Name: ${name} \nEmail: ${email} \nMessage: ${message}`
 
     return await transporter.sendMail({
-        from: 'mathew37@ethereal.email',
-        to: 'mathew37@ethereal.email',
+        to: 'jordansbarbosa01@gmail.com',
         replyTo: email,
-        subject: `Test email from ${name}`,
-        text: message
-    }, (err, info) => {
+        subject: `Contact form @ Jordanbarbosa.com | ${name}`,
+        text: formated_message
+    }, err => {
         if (err) {
             console.log(err)
             return res.json({ success: false })
