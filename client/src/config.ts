@@ -1,7 +1,5 @@
 export const isProd = () => {
-    const isProd = false;
-
-    return isProd;
+    return false;
 };
 
 const URL = () => {
