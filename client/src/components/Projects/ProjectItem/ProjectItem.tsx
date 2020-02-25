@@ -20,7 +20,7 @@ export default function ProjectItem({ project }: Props) {
                     animation: 'slide-right',
                 },
             }}
-            className="project-item"
+            className="project-item d-flex justify-content-center align-items-center"
         >
             <div className="project-item-overlay d-flex justify-content-center align-items-center">
                 <div className="project-item-overlay-circle d-flex justify-content-center align-items-center">
@@ -28,7 +28,9 @@ export default function ProjectItem({ project }: Props) {
                 </div>
             </div>
             {/* { In the future create smaller images 350x250} */}
-            <Image src={`${config.url}/images/projects/${project._id}-min.png`} />
+            <div className="project-image d-flex justify-content-center align-items-center">
+                <Image src={`${config.url}/images/projects/${project._id}-min.png`} />
+            </div>
         </Link>
     );
 }
