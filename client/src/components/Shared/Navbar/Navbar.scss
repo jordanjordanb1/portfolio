@@ -2,11 +2,16 @@
     background: transparent;
     z-index: 999999999999999;
 
+    .navbar-brand {
+        font-family: 'Concert One' !important;
+    }
+
     .navbar-brand,
     .nav-item,
     .nav-link {
         color: var(--almond) !important;
         transition: all 200ms ease-out;
+        font-family: 'Ubuntu';
 
         &:hover {
             color: var(--tuscany) !important;
@@ -63,6 +68,7 @@
         .nav-link {
             background: initial !important;
             color: var(--almond) !important;
+            margin-bottom: 10px;
         }
 
         .active {
