@@ -2,11 +2,13 @@
 const mongodb_user = process.env.MONGOUSER || '',
     mongodb_pass = process.env.MONGOPASS || '',
     secret = process.env.SECRET || '',
-    gmail_pass = process.env.GMAIL_PASS || ''
+    gmail_pass = process.env.GMAIL_PASS || '',
+    env = process.env.NODE_ENV || 'production' // Loads NODE_ENV from enviorment variables or prod for default
 
 module.exports = {
-    mongoUrl: 'mongodb://localhost:27017/portfolio',
+    mongoUrl: 'mongodb://service.mongodb:27017/portfolio',
     mongoProdUrl: `mongodb://${mongodb_user}:${mongodb_pass}@ds061757.mlab.com:61757/heroku_8f2wlb6c`,
     secret,
-    gmail_pass
+    gmail_pass,
+    env
 }
