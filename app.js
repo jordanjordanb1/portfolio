@@ -6,6 +6,9 @@ const express = require('express'),
     helmet = require('helmet'),
     __CONFIG__ = require('./config');
 
+// Dotenv config
+require('dotenv').config()
+
 const indexRouter = require('./routes/index'),
     apiRouter = require('./routes/api')
 
@@ -15,23 +18,22 @@ const app = express();
 mongoose.set('useCreateIndex', true);
 
 // Connecting to server
-if (process.env.PROD) {
-    console.log("Trying to connect to production DB...")
-    mongoose.connect(__CONFIG__.mongoProdUrl, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(db => console.log('Connected to MongoDB...')).catch(err => console.error(err))
-} else {
-    console.log("Trying to connect to development DB...")
-    mongoose.connect(__CONFIG__.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(db => console.log('Connected to MongoDB...')).catch(err => console.error(err))
-}
+console.log(`*** Trying to connect to ${process.env.NODE_ENV} DB ***`)
+
+const mongoUrl = process.env.NODE_ENV === 'production' ? __CONFIG__.mongoProdUrl : __CONFIG__.mongoUrl
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+    .then(db => console.log('*** Connected to MongoDB ***'))
+    .catch(console.error)
+
 
 // Helmet setup
 app.use(helmet())
 
 // CORS setup
-app.use(cors())
+app.use(cors({ origin: true }))
 
 // Enables logger in development mode
-if (!process.env.PROD)
-    app.use(logger('dev'));
+process.env.NODE_ENV !== 'production' && app.use(logger('dev'));
 
 app.use(express.json({ limit: '12mb' }))
 app.use(express.urlencoded({ limit: '12mb', extended: true }))
