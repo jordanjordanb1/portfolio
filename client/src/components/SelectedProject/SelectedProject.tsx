@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import { useLocation } from 'react-router';
 import Project from '../../interfaces/ProjectInterface';
-import { config } from '../../config';
+import config from '../../config';
 
 interface State {
     project: Project;
@@ -31,7 +31,7 @@ export default function SelectedProject() {
                         lg={{ span: 6, offset: 3 }}
                         className="d-flex justify-content-center selected-image"
                     >
-                        <Image fluid src={`${config.url}/images/projects/${_id}.png`} />
+                        <Image fluid src={`${config.getUrl()}/images/projects/${_id}.png`} />
                     </Col>
                 </Row>
 

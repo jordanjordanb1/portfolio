@@ -3,7 +3,7 @@ import Project from '../../../interfaces/ProjectInterface';
 import Image from 'react-bootstrap/Image';
 import './ProjectItem.scss';
 import { Link } from 'react-router-dom';
-import { config } from '../../../config';
+import config from '../../../config';
 
 interface Props {
     key: number;
@@ -29,7 +29,7 @@ export default function ProjectItem({ project }: Props) {
             </div>
             {/* { In the future create smaller images 350x250} */}
             <div className="project-image d-flex justify-content-center align-items-center">
-                <Image src={`${config.url}/images/projects/${project._id}-min.png`} />
+                <Image src={`${config.getUrl()}/images/projects/${project._id}-min.png`} />
             </div>
         </Link>
     );

@@ -4,7 +4,7 @@ import { default as NavbarBootstrap } from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { NavLink, Link } from 'react-router-dom';
-import { config } from '../../../config';
+import config from '../../../config';
 
 export default function Navbar() {
     return (
@@ -112,7 +112,7 @@ export default function Navbar() {
                         <i className="far fa-envelope mt-2"></i>
                     </Nav.Link>
 
-                    <Nav.Link target="_blank" href={`${config.url}/resume/resume.pdf`}>
+                    <Nav.Link target="_blank" href={`${config.getUrl()}/resume/resume.pdf`}>
                         <Button className="p-1 px-2 resume-button">RESUME</Button>
                     </Nav.Link>
                 </Nav>

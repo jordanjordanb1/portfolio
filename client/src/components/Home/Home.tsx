@@ -3,7 +3,7 @@ import './Home.scss';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { config } from '../../config';
+import config from '../../config';
 
 export default function Home() {
     return (
@@ -33,7 +33,7 @@ export default function Home() {
                     <Button
                         // @ts-ignore
                         target="_blank"
-                        href={`${config.url}/resume/resume.pdf`}
+                        href={`${config.getUrl()}/resume/resume.pdf`}
                         className="quick-links mt-2 mr-2 p-2 d-sm-none"
                     >
                         RESUME

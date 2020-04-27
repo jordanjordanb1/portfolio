@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { config } from '../config';
+import config from '../config';
 import * as ActionTypes from './ActionTypes';
 import Project from '../interfaces/ProjectInterface';
 
-axios.defaults.baseURL = config.url; // Sets base URL in axios
+axios.defaults.baseURL = config.getUrl(); // Sets base URL in axios
 
 export const setProjectsLoading = () => ({
     type: ActionTypes.PROJECTS_LOADING,
