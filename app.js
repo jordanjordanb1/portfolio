@@ -19,18 +19,6 @@ app.use(cors({ origin: true }));
 DB.connect();
 
 /**
- * PRODUCTION AND CI ONLY CONFIG
- */
-if (['production', 'ci'].includes(keys.env)) {
-  app.use(express.static('client/build'));
-
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve('client', 'build', 'index.html'));
-  });
-}
-
-/**
  * DEVELOPMENT ONLY CONFIG
  */
 if (['development'].includes(keys.env)) {
@@ -44,5 +32,17 @@ app.use(express.urlencoded({ limit: '12mb', extended: true }));
 
 /* Routes  */
 app.use('/api', require('./routes/api'));
+
+/**
+ * PRODUCTION AND CI ONLY CONFIG
+ */
+if (['production', 'ci'].includes(keys.env)) {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
+}
 
 module.exports = app;
