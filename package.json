@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "client": "npm run start --prefix client",
-    "start": " npx pm2 start ./bin/www -i 0",
+    "start": "./scripts/start.sh",
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "# npm run build --prefix client"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
