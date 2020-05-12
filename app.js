@@ -22,6 +22,7 @@ DB.connect();
  * PRODUCTION AND CI ONLY CONFIG
  */
 if (['production', 'ci'].includes(keys.env)) {
+  app.use(express.static('client/public'));
   app.use(express.static('client/build'));
 
   const path = require('path');
