@@ -1,10 +1,6 @@
-const express = require('express'),
-    router = express.Router();
+const router = require('express').Router();
 
-const contactRoute = require('./api/contact'),
-    projectsRoute = require('./api/projects')
-
-router.use('/contact', contactRoute)
-router.use('/projects', projectsRoute)
-
-module.exports = router;
+module.exports = () => {
+  router.use('/contact', require('./api/contact')(router));
+  router.use('/projects', require('./api/projects')(router));
+};
