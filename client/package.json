@@ -54,6 +54,6 @@
         ]
     },
     "devDependencies": {
-        "@types/react-helmet": "^5.0.15",
+        "@types/react-helmet": "^5.0.15"
     }
 }
