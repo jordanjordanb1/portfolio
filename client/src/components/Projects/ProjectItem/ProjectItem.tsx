@@ -6,31 +6,31 @@ import { Link } from 'react-router-dom';
 import config from '../../../config';
 
 interface Props {
-    key: number;
-    project: Project;
+  key: number;
+  project: Project;
 }
 
 export default function ProjectItem({ project }: Props) {
-    return (
-        <Link
-            to={{
-                pathname: `/projects/${project._id}`,
-                state: {
-                    project,
-                    animation: 'slide-right',
-                },
-            }}
-            className="project-item d-flex justify-content-center align-items-center"
-        >
-            <div className="project-item-overlay d-flex justify-content-center align-items-center">
-                <div className="project-item-overlay-circle d-flex justify-content-center align-items-center">
-                    <span className="mt-1">VIEW</span>
-                </div>
-            </div>
-            {/* { In the future create smaller images 350x250} */}
-            <div className="project-image d-flex justify-content-center align-items-center">
-                <Image src={`${config.getUrl()}/images/projects/${project._id}-min.png`} />
-            </div>
-        </Link>
-    );
+  return (
+    <Link
+      to={{
+        pathname: `/projects/${project._id}`,
+        state: {
+          project,
+          animation: 'slide-right',
+        },
+      }}
+      className="project-item d-flex justify-content-center align-items-center"
+    >
+      <div className="project-item-overlay d-flex justify-content-center align-items-center">
+        <div className="project-item-overlay-circle d-flex justify-content-center align-items-center">
+          <span className="mt-1">VIEW</span>
+        </div>
+      </div>
+      {/* { In the future create smaller images 350x250} */}
+      <div className="project-image d-flex justify-content-center align-items-center">
+        <Image src={`${config.getUrl()}/static/images/projects/${project._id}-min.png`} />
+      </div>
+    </Link>
+  );
 }

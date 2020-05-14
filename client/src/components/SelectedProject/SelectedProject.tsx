@@ -36,7 +36,7 @@ export default function SelectedProject() {
               lg={{ span: 6, offset: 3 }}
               className="d-flex justify-content-center selected-image"
             >
-              <Image fluid src={`${config.getUrl()}/images/projects/${_id}.png`} />
+              <Image fluid src={`${config.getUrl()}/static/images/projects/${_id}.png`} />
             </Col>
           </Row>
 
