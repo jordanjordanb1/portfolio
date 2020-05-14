@@ -5,11 +5,10 @@
   "private": true,
   "scripts": {
     "client": "npm run start --prefix client",
-    "preinstall": "npm i -g pm2",
-    "start:disabled": "npx pm2 start ./bin/www -i 4",
+    "start:pm2": "npx pm2 start ./bin/www -i 0 --watch",
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "./scripts/build"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
