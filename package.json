@@ -8,6 +8,7 @@
     "start:pm2": "npx pm2 start ./bin/www -i 0 --watch",
     "server": "nodemon ./bin/www",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "pm2 start ecosystem.config.js",
     "build": "./scripts/build"
   },
   "dependencies": {
