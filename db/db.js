@@ -10,7 +10,7 @@ module.exports = class DB {
       // Connecting to server
       console.log(`*** Trying to connect to ${env} DB ***`);
 
-      const db = await mongoose.connect(mongoURI, {
+      const db = await mongoose.connect(`${mongoURI}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
