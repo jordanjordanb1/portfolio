@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Build script has begun!"
+echo "Initiating build scipt..."
+start=`date +%s`
 
 CLIENT_PATH="./client"
 SERVER_NODE_MODULES="./node_modules"
@@ -10,12 +11,17 @@ echo "SERVER NODE MODULES: $SERVER_NODE_MODULES"
 echo "CLIENT NODE MODULES: $CLIENT_NODE_MODULES"
 
 # Checks if pm2 is already installed
-npm list -g pm2 || npm install -g pm2@latest && pm2 update
+echo "Checking to see if PM2 is installed globally..."
+(npm list -g pm2 && echo "PM2 is installed! Moving on...") || (echo "Installing PM2..." && npm install -g pm2@latest && pm2 update)
 
 # Checks if react-scripts is already installed
-npm list -g react-scripts || npm install -g react-scripts@latest
+echo "Checking to see if react-scripts is installed globally..."
+(npm list -g react-scripts && echo "react-scripts is installed! Moving on...") || (echo "Installing react-scripts..." && npm install -g react-scripts@latest)
 
 # Builds client
+echo "Building client..."
 npm run build --prefix client
 
-echo "Build script has finished!"
+end=`date +%s`
+runtime=$((end-start))
+echo "DONE: Build script completed in $runtime seconds."
