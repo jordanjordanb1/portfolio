@@ -1,7 +1,8 @@
-if (`${process.env.NODE_ENV}` === 'development') {
-  module.exports = require('./dev');
-} else if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./prod');
-} else {
-  throw new Error('Enviroment is not set!');
-}
+module.exports = {
+  mongoURI: `${process.env.MONGO_URI}`,
+  secret: `${process.env.SECRET}`,
+  gmailPass: `${process.env.GMAIL_PASS}`,
+  env: `${process.env.NODE_ENV}`,
+  port: `${process.env.PORT}`,
+  debug: process.env.DEBUG,
+};
