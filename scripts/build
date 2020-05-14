@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+echo "Build script has begun!"
+
+CLIENT_PATH="./client"
+SERVER_NODE_MODULES="./node_modules"
+CLIENT_NODE_MODULES="$CLIENT_PATH/node_modules"
+
+echo "SERVER NODE MODULES: $SERVER_NODE_MODULES"
+echo "CLIENT NODE MODULES: $CLIENT_NODE_MODULES"
+
+# Checks if pm2 is already installed
+npm list -g pm2 || npm install -g pm2@latest && pm2 update
+
+# Checks if react-scripts is already installed
+npm list -g react-scripts || npm install -g react-scripts@latest
+
+# Builds client
+npm run build --prefix client
+
+echo "Build script has finished!"
