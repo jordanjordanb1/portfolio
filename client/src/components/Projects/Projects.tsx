@@ -13,9 +13,9 @@ import Loader from '../Shared/Loader/Loader';
 import { Helmet } from 'react-helmet';
 
 export default function Projects() {
-  const { loading } = useSelector((state) => (state as any).projects),
-    { list } = useSelector((state) => (state as any).projects),
-    { error } = useSelector((state) => (state as any).projects),
+  const { loading } = useSelector(state => (state as any).projects),
+    { list } = useSelector(state => (state as any).projects),
+    { error } = useSelector(state => (state as any).projects),
     dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Projects() {
   return (
     <>
       <Helmet>
-        <title>Projects | Jordan Barbosa</title>
+        <title>Projects | Full Stack Web Dev | Jordan Barbosa</title>
         <link rel="canonical" href="https://jordanbarbosa.com/projects" />
       </Helmet>
       <Jumbotron fluid className="page">

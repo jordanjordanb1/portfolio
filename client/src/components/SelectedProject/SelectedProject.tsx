@@ -25,7 +25,8 @@ export default function SelectedProject() {
   return (
     <>
       <Helmet>
-        <title>{name} | Projects | Jordan Barbosa</title>
+        <title>{name} | Projects | Full Stack Web Dev | Jordan Barbosa</title>
+        <link rel="canonical" href={`https://jordanbarbosa.com/projects/${_id}`} />
       </Helmet>
       <Jumbotron fluid className="page d-flex justify-content-center align-items-center">
         <Container className="mt-4 selected">
@@ -36,7 +37,7 @@ export default function SelectedProject() {
               lg={{ span: 6, offset: 3 }}
               className="d-flex justify-content-center selected-image"
             >
-              <Image fluid src={`${config.getUrl()}/static/images/projects/${_id}.png`} />
+              <Image fluid src={`${config.getStatic()}/images/projects/${_id}.png`} />
             </Col>
           </Row>
 

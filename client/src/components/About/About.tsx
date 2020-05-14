@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Me | Jordan Barbosa</title>
+        <title>About Me | Full Stack Web Dev | Jordan Barbosa</title>
         <link rel="canonical" href="https://jordanbarbosa.com/about" />
       </Helmet>
       <Jumbotron fluid className="page d-flex align-items-center">

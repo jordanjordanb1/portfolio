@@ -5,4 +5,7 @@ export default {
       ? 'https://jordanbarbosa.com'
       : 'http://localhost:3001';
   },
+  getStatic: function () {
+    return `${this.getUrl()}/static`;
+  },
 };

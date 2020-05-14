@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | Jordan Barbosa</title>
+        <title>Contact | Full Stack Web Dev | Jordan Barbosa</title>
         <link rel="canonical" href="https://jordanbarbosa.com/contact" />
       </Helmet>
       <Jumbotron fluid className="page">

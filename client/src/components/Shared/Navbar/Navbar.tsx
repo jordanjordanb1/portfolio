@@ -142,7 +142,7 @@ export default function Navbar() {
 
           <Nav.Link
             target="_blank"
-            href={`${config.getUrl()}/resume/resume.pdf`}
+            href={`${config.getStatic()}/resume/resume.pdf`}
             data-title="Resume Link - Navbar"
             onClick={handleClick}
           >

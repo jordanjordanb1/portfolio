@@ -29,7 +29,7 @@ export default function ProjectItem({ project }: Props) {
       </div>
       {/* { In the future create smaller images 350x250} */}
       <div className="project-image d-flex justify-content-center align-items-center">
-        <Image src={`${config.getUrl()}/static/images/projects/${project._id}-min.png`} />
+        <Image src={`${config.getStatic()}/images/projects/${project._id}-min.png`} />
       </div>
     </Link>
   );

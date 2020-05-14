@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Home | Jordan Barbosa</title>
+        <title>Home | Full Stack Web Dev | Jordan Barbosa</title>
         <link rel="canonical" href="https://jordanbarbosa.com/" />
       </Helmet>
       <Jumbotron
@@ -50,7 +50,7 @@ export default function Home() {
             <Button
               // @ts-ignore
               target="_blank"
-              href={`${config.getUrl()}/resume/resume.pdf`}
+              href={`${config.getStatic()}/resume/resume.pdf`}
               className="quick-links mt-2 mr-2 p-2 d-sm-none"
               data-title="Resume Button - Home Page"
               onClick={handleClick}
