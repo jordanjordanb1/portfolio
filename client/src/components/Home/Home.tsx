@@ -5,8 +5,17 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import config from '../../config';
 import { Helmet } from 'react-helmet';
+import Analytics from '../../utils/analytics/Analytics';
 
 export default function Home() {
+  const handleClick = (e: any) => {
+    const dataUrl = e.currentTarget.getAttribute('data-title');
+
+    if (dataUrl) {
+      Analytics.onClick(dataUrl);
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -33,6 +42,8 @@ export default function Home() {
                 },
               }}
               className="quick-links mt-2 mr-2 p-2"
+              data-title="Contact Me Button"
+              onClick={handleClick}
             >
               CONTACT ME
             </Button>
@@ -41,6 +52,8 @@ export default function Home() {
               target="_blank"
               href={`${config.getUrl()}/resume/resume.pdf`}
               className="quick-links mt-2 mr-2 p-2 d-sm-none"
+              data-title="Resume Button - Home Page"
+              onClick={handleClick}
             >
               RESUME
             </Button>
