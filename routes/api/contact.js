@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const { gmailPass } = require('../../config/keys');
+const router = require('express').Router();
 
 const main = async ({ name, email, message }, res) => {
   const transporter = nodemailer.createTransport({
@@ -19,7 +20,7 @@ const main = async ({ name, email, message }, res) => {
       subject: `Contact form @ Jordanbarbosa.com | ${name}`,
       text: formated_message,
     },
-    (err) => {
+    err => {
       if (err) {
         console.log(err);
         return res.json({ success: false });
@@ -30,10 +31,10 @@ const main = async ({ name, email, message }, res) => {
   );
 };
 
-module.exports = (router) => {
-  router.post('/', (req, res) => {
-    const { body } = req;
+router.post('/', (req, res) => {
+  const { body } = req;
 
-    main(body, res).catch((e) => console.error(e));
-  });
-};
+  main(body, res).catch(e => console.error(e));
+});
+
+module.exports = router;

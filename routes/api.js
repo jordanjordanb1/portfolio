@@ -1,6 +1,4 @@
-const router = require('express').Router();
-
-module.exports = () => {
-  router.use('/contact', require('./api/contact')(router));
-  router.use('/projects', require('./api/projects')(router));
+module.exports = app => {
+  app.use('/api/contact', require('./api/contact'));
+  app.use('/api/projects', require('./api/projects'));
 };
