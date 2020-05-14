@@ -2,6 +2,7 @@
 require('dotenv').config({ debug: process.env.DEBUG });
 
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const keys = require('./config/keys');
@@ -30,8 +31,11 @@ if (['development'].includes(keys.env)) {
 app.use(express.json({ limit: '12mb' }));
 app.use(express.urlencoded({ limit: '12mb', extended: true }));
 
+/* Static Files */
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
 /* Routes  */
-app.use('/api', require('./routes/api'));
+require('./routes/api')(app);
 
 /**
  * PRODUCTION AND CI ONLY CONFIG
@@ -39,7 +43,6 @@ app.use('/api', require('./routes/api'));
 if (['production', 'ci'].includes(keys.env)) {
   app.use(express.static('client/build'));
 
-  const path = require('path');
   app.get('*', (req, res) => {
     res.sendFile(path.resolve('client', 'build', 'index.html'));
   });
