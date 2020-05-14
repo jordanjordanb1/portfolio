@@ -5,6 +5,7 @@
     "private": true,
     "proxy": "http://local.jordanbarbosa:3001",
     "dependencies": {
+        "@shopify/react-google-analytics": "3.1.12",
         "@testing-library/jest-dom": "^5.7.0",
         "@testing-library/react": "^10.0.4",
         "@testing-library/user-event": "^10.1.2",
@@ -13,8 +14,10 @@
         "@types/react": "^16.9.35",
         "@types/react-bootstrap": "^1.0.1",
         "@types/react-dom": "^16.9.8",
+        "@types/react-helmet": "^5.0.15",
         "axios": "^0.19.2",
         "formik": "^2.1.4",
+        "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-bootstrap": "^1.0.1",
         "react-dom": "^16.13.1",
@@ -25,17 +28,16 @@
         "react-scripts": "^3.4.1",
         "react-transition-group": "^4.4.1",
         "redux": "^4.0.5",
+        "redux-devtools-extension": "^2.13.8",
         "redux-logger": "^3.0.6",
         "redux-thunk": "^2.3.0",
+        "tslib": "2.0.0",
         "typescript": "^3.8.3",
-        "yup": "^0.28.5",
-        "node-sass": "^4.14.1",
-        "redux-devtools-extension": "^2.13.8",
-        "@types/react-helmet": "^5.0.15"
+        "yup": "^0.28.5"
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "npm i && npx react-scripts build",
+        "build": "NPM_CONFIG_PRODUCTION=false npx react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
