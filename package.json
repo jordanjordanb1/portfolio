@@ -31,7 +31,10 @@
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.3"
   },
-  "cacheDirectories": ["client/node_modules", "./node_modules"],
+  "cacheDirectories": [
+    "client/node_modules",
+    "./node_modules"
+  ],
   "engines": {
     "node": "14.x"
   }
