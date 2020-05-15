@@ -14,6 +14,7 @@ const { port } = require('../config/keys');
  */
 
 http.globalAgent.keepAlive = true;
+http.globalAgent.keepAliveMsecs = 10000;
 
 /**
  * Create HTTP server.
