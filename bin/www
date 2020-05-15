@@ -10,6 +10,12 @@ const http = require('http');
 const { port } = require('../config/keys');
 
 /**
+ * HTTP Agent
+ */
+
+http.globalAgent.keepAlive = true;
+
+/**
  * Create HTTP server.
  */
 
