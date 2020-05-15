@@ -1,1 +1,1 @@
-web: pm2 set pm2:autodump true && nohup pm2 start ecosystem.config.js &
+web: pm2 set pm2:autodump true && pm2 start ecosystem.config.js
