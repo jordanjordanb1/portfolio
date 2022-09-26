@@ -22,7 +22,7 @@
     "mongoose": "^5.9.13",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.6",
-    "pm2": "^4.4.0",
+    "pm2": "^5.2.0",
     "ts-loader": "7.0.4",
     "typescript": "3.9.2"
   },
